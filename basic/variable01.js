@@ -10,7 +10,6 @@ console.table([x, y, z ]) // using console.table to display values in a table fo
 const pi = 3.14159; // constant variable
 
 // LET name = "Alice"; // incorrect variable declaration (case-sensitive)
-
 /* This is a multi-line comment
    that spans multiple lines */
 
@@ -123,3 +122,74 @@ myobject.city = "indore";
 console.log(myobject); // Output: {name: "prashu", age: 21, city: "indore"}
 // but you cannot reassign the object:
 // myobject = {name: "rahul", age : 25, city : "delhi"}; // Error: Assignment to constant variable.
+
+// summary 
+// 🔹 VARIABLE DECLARATION
+let greeting2 = "Hello, World!"; // 'let' is block-scoped, can be reassigned but not redeclared
+const pi2 = 3.14159;             // 'const' is block-scoped, cannot be reassigned or redeclared
+var city2 = "New York";          // 'var' is function-scoped and can be redeclared (not recommended)
+
+// 🔹 IDENTIFIERS & NAMING RULES
+/* 
+- Can include letters, digits, _ , $
+- Must start with letter, _ , or $
+- Case-sensitive (name ≠ Name)
+- Cannot use reserved keywords
+- Hyphens (-) not allowed
+- Prefer lowerCamelCase
+*/
+
+// Examples:
+let _name2 = "Bob";
+let $age2 = 25;
+
+// 🔹 EXPRESSIONS & OUTPUT
+console.log(5 * 10);                 // Arithmetic operation
+console.table([x, y, z]);            // Displays values in table form
+
+// 🔹 EQUALITY OPERATORS
+/* 
+=   → assignment
+==  → loose equality (type conversion)
+=== → strict equality (no type conversion)
+*/
+if (lastname === lastName) console.log("Not equal");
+
+// 🔹 SEMICOLONS & SPACES
+// Semicolons are optional but recommended.
+// JS ignores multiple spaces — add them for readability.
+
+// 🔹 SCOPE RULES
+{
+  let blockx = 10;  // block-scoped
+  const blocky = 20;
+  console.log(blockx + blocky);
+}
+// console.log(blockx); // ❌ Error
+
+{
+  var blocka = 10;   // var is not block-scoped
+  var blockb = 20;
+}
+console.log(blocka + blockb); // ✅ Works (but bad practice)
+
+// 🔹 REASSIGNING vs REDECLARING
+let num = 80;
+num = 90;          // ✅ reassign
+// let num = 100;  // ❌ redeclare (same scope)
+
+// 🔹 CONST ARRAYS & OBJECTS
+const myArray2 = [1, 2, 3];
+myArray2[0] = 10;    // ✅ allowed (modifying)
+myArray2.push(4);    // ✅ allowed
+// myArray = [4, 5]; // ❌ Error (reassigning)
+
+const myObject2 = { name: "Prashu", age: 21, city: "Rewa" };
+myObject2.city = "Indore"; // ✅ modify property
+// myObject = {...}       // ❌ reassign object
+
+// 🔹 TYPE COERCION IN STRINGS
+let hii2 = "5" + 23 + 2; // "5232" (string concatenation)
+let hello2 = 5 + 23 + "2"; // "282" (numbers added before string conversion)
+
+
