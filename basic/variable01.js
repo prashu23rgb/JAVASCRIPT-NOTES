@@ -21,9 +21,9 @@ Names must begin with a letter, a $ sign or an underscore (_).
 Names are case sensitive (X is different from x).
 Reserved words (JavaScript keywords) cannot be used as names.
 Can contain digits after the first character
-Hyphens are not allowed in JavaScript. They are reserved for subtractions.
+**Hyphens are not allowed in JavaScript. They are reserved for subtractions.**
 JavaScript programmers tend to use lower camel case(not nessasary)
-JavaScript treats underscore as a letter.*/
+**JavaScript treats underscore as a letter.**/
 let _name = "Bob";
 let $age = 25; //JavaScript also treats a dollar sign as a letter.
 
@@ -34,7 +34,7 @@ console.log(5 * 10);
 //JavaScript identifiers are case sensitive.The variables lastName and lastname, are different variables:
 
 let lastName = "Smith";
-let lastname = "Johnson";
+let lastname = "Johnson";  // both are different variables {lets check equality}
 
 /*if (lastname = lastName ) { 
   console.log("They are equal");
@@ -56,9 +56,10 @@ if (lastname === lastName) {
   console.log("They are not equal");
 } // strict equality (no type conversion)
 
-/* NOTE: you might see examples without semicolons.
+/* NOTE: you might see examples of js statements without ending by semicolons in last.
 Ending statements with semicolon is not required, but highly recommended. through semicolon separation we can write multiple statements on one line 
-NOTE : JavaScript ignores multiple spaces. You can add white space to your script to make it more readable.*/
+**NOTE : JavaScript ignores multiple spaces.**
+ You can add white space to your script to make it more readable.*/
 let a = 5;     let b = 10;      let c = a + b;       console.log(c);
 
 // Using var to declare a variable (not recommended in modern JavaScript)
@@ -85,7 +86,7 @@ Variables declared with varinside a { } block can be accessed from outside the b
   var blocka = 10;
   var blockb = 20;
 } 
-console.log(blocka + blockb); // Output: 30
+console.log(blocka + blockb); // Output: 30 this works because var is not block-scoped {problematic}
 
 // Reassigning vs Redeclaring
 let vii = 80
@@ -104,6 +105,21 @@ Reassign a constant value
 Reassign a constant array
 Reassign a constant object
 But you CAN:
-
 Change the elements of constant array
 Change the properties of constant object*/
+
+const myArray = [1, 2, 3];
+// you can change elements:
+myArray[0] = 10;
+console.log(myArray); // Output: [10, 2, 3]
+// but you cannot reassign the array:
+// myArray = [4, 5, 6]; // Error: Assignment to constant variable. Even you can add elements in array 
+myArray.push(4);
+console.log(myArray); // Output: [10, 2, 3, 4]
+
+const myobject = {name: "prashu", age : 21, city : "rewa"};
+// you can change properties:
+myobject.city = "indore";
+console.log(myobject); // Output: {name: "prashu", age: 21, city: "indore"}
+// but you cannot reassign the object:
+// myobject = {name: "rahul", age : 25, city : "delhi"}; // Error: Assignment to constant variable.
